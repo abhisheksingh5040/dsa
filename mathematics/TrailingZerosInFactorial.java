@@ -33,6 +33,7 @@ public class TrailingZerosInFactorial {
     /*
     NEED TO COUNT 2 & 5 -> TO GET TRAILING ZEROS
      */
+    //Time Complexity : Theta(log(n))
     public static int efficientMethod(int num) {
         if (num < 5) {
             return 0;
@@ -40,7 +41,7 @@ public class TrailingZerosInFactorial {
 
         int result = 0;
 
-        for (int i = 5; i <= num; i = i * i) {
+        for (int i = 5; i <= num; i = i * 5) {
             result = result + num / i;
         }
 
