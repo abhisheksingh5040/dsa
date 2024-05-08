@@ -11,7 +11,7 @@ public class GroupAnagram {
     }
 
     public static Collection<List<String>> groupAnagram(List<String> list) {
-        Map<String, List<String>> map = new TreeMap<>(Comparator.comparing(String::length).reversed());
+        Map<String, List<String>> map = new TreeMap<>(Comparator.comparingInt(String::length).reversed());
 
         for (String li : list) {
             char[] charArray = li.toCharArray();
