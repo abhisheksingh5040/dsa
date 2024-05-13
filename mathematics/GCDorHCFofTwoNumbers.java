@@ -7,6 +7,12 @@ public class GCDorHCFofTwoNumbers {
         int input2 = 12;
         int naive = naiveUsingWhile(input1, input2);
         System.out.println(naive);
+
+        int efficientMethod = efficientMethod(input1, input2);
+        System.out.println(efficientMethod);
+
+        int optimizedImplementationOfEuclidean = optimizedImplementationOfEuclidean(input1, input2);
+        System.out.println(optimizedImplementationOfEuclidean);
     }
 
     // Theta(MIN(NUM1,NUM2))
@@ -44,6 +50,21 @@ public class GCDorHCFofTwoNumbers {
      *
      */
     public static int efficientMethod(int num1, int num2) {
-        return 0;
+        while (num1 != num2) {
+            if (num1 > num2) {
+                num1 = num1 - num2;
+            } else {
+                num2 = num2 - num1;
+            }
+        }
+        return num1;
+    }
+
+    public static int optimizedImplementationOfEuclidean(int num1, int num2) {
+        //base condition
+        if (num2 == 0)
+            return num1;
+        else
+            return optimizedImplementationOfEuclidean(num2, num1 % num2);
     }
 }
