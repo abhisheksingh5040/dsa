@@ -13,6 +13,7 @@ public class Prime {
         System.out.println(moreEfficient);
     }
 
+    //Time complexity O(n)
     public static boolean naive(int num) {
         if (num == 1)
             return false;
