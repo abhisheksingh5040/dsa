@@ -8,6 +8,7 @@ public class CountDigit {
         System.out.println(countedDigit);
     }
 
+    // Time Complexity (O(num length))
     public static int countDigit(int num) {
         int count = 0;
 
