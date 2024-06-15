@@ -1,4 +1,4 @@
 package timecomplexity;
 
-public class O2 {
+public class O3 {
 }
