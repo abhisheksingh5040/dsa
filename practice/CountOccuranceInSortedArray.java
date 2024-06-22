@@ -56,4 +56,5 @@ public class CountOccuranceInSortedArray {
 
         return -1;
     }
+
 }
