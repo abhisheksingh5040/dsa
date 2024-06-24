@@ -13,7 +13,6 @@ public class KsizeMaximumSubArray {
         if (n < k) {
             return -1;
         }
-
         int sum = 0;
         int maxSum = Integer.MIN_VALUE;
 
