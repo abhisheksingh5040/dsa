@@ -25,7 +25,6 @@ public class KSizeMaximumSubArray {
             sum += arr[i] - arr[i - k];
             maxSum = Math.max(maxSum, sum);
         }
-
         return maxSum;
     }
 }
