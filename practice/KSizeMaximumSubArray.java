@@ -19,6 +19,7 @@ public class KSizeMaximumSubArray {
         for (int i = 0; i < k; i++) {
             sum += arr[i];
         }
+
         maxSum = sum;
 
         for (int i = k; i < n; i++) {
