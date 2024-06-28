@@ -21,7 +21,6 @@ public class KSizeMaximumSubArray {
         }
 
         maxSum = sum;
-
         for (int i = k; i < n; i++) {
             sum += arr[i] - arr[i - k];
             maxSum = Math.max(maxSum, sum);
