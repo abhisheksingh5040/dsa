@@ -25,7 +25,7 @@ public class Prime {
         return true;
     }
 
-    //Time complexcity : O(root N)
+    //Time complexity : O(root N)
     public static boolean efficientWay(int num) {
         if (num == 1)
             return false;
