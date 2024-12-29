@@ -13,12 +13,10 @@ public class CountDistinctElements {
 
     public static int countDistinctElement(int[] arr, int n) {
         Set<Integer> set = new HashSet<>();
-        int count = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (set.add(arr[i])) count++;
-        }
+        for (int i = 0; i < n; i++)
+            set.add(arr[i]);
 
-        return count;
+        return set.size();
     }
 }
