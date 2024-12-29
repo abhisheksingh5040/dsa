@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Time complexity : O(m + n)
+ * Space complexity : O(m + n)
+ */
 public class UnionOfTwoUnsortedArray {
 
     public static void main(String[] args) {
