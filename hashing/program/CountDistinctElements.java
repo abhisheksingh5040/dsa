@@ -1,5 +1,6 @@
 package hashing.program;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,11 @@ public class CountDistinctElements {
         for (int i = 0; i < n; i++)
             set.add(arr[i]);
 
+        return set.size();
+    }
+
+    public static int countDistinctElement2(Integer[] arr,int n) {
+        Set<Integer> set = new HashSet<>(Arrays.asList(arr));
         return set.size();
     }
 }
