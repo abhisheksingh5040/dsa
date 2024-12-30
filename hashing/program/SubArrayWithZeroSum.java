@@ -16,7 +16,7 @@ public class SubArrayWithZeroSum {
         System.out.println(result);
     }
 
-    /**
+    /** PreFix sum + hashing question
      * int[] = {a,b,c,d,e};
      *     a + b + c + d + e = totalSum
      *     a + b + c = currentSum
@@ -34,7 +34,7 @@ public class SubArrayWithZeroSum {
                 return true;
             }
 
-            if (num == 0) {
+            if (currentSum == 0) {
                 return true;
             }
 
