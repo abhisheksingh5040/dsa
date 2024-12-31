@@ -12,6 +12,9 @@ public class SubArrayWithGivenSum {
         System.out.println(result);
     }
 
+    /**
+     * prefixSum2 = prefixSum1 + sum
+     */
     public static boolean subArrayWithGivenSum(int[] arr,int sum){
         Set<Integer> set = new HashSet<>();
         int prefixSum = 0;
