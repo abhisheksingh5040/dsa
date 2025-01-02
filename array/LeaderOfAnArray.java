@@ -8,19 +8,21 @@ public class LeaderOfAnArray {
         int[] input = {7, 10, 4, 3, 6, 5, 2};
         int[] input2 = {10, 20, 30};
         int[] input3 = {30, 20, 10};
-        int n = input2.length;
+        int n = input.length;
 
-        List<Integer> naiveSolution = naiveSolution(input2, n);
+        List<Integer> naiveSolution = optimizeSolution(input, n);
         System.out.println(naiveSolution);
     }
 
-    public static List<Integer> naiveSolution(int[] arr, int n) {
+    public static List<Integer> optimizeSolution(int[] arr, int n) {
         List<Integer> list = new ArrayList<>();
-        list.add(arr[n - 1]);
+        int max = arr[n - 1];
+        list.add(max);
 
         for (int i = n - 2; i >= 0; i--) {
-            if (arr[i] < arr[i + 1]) {
-                list.add(arr[i + 1]);
+            if (arr[i] > max) {
+                max = arr[i];
+                list.add(max);
             }
         }
         return list;
