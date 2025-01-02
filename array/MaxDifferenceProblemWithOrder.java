@@ -14,7 +14,7 @@ public class MaxDifferenceProblemWithOrder {
         naiveSolution(input2, n);
     }
 
-    //Time complexity
+    //Time complexity : Theta(n)
     public static void naiveSolution(int[] arr, int n) {
         int max = Integer.MIN_VALUE;
 
