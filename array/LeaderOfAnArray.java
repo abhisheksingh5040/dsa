@@ -3,6 +3,9 @@ package array;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * leader means any num which is greater than all the right num
+ */
 public class LeaderOfAnArray {
     public static void main(String[] args) {
         int[] input = {7, 10, 4, 3, 6, 5, 2};
