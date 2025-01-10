@@ -29,12 +29,13 @@ public class MaximumSubArraySum {
      * Space Complexity : O(1)
      */
     public static void optimizeSolution(int[] arr, int n) {
-        int max = arr[0];
+        int max = arr[0], res = 0;
 
         for (int i = 1; i < n; i++) {
             max = Math.max(max + arr[i], arr[i]);
+            res = Math.max(res, max);
         }
 
-        System.out.println(max);
+        System.out.println(res);
     }
 }
