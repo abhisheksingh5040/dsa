@@ -31,6 +31,9 @@ public class SearchInInfiniteSizedArray {
         }
     }
 
+    /**
+     * Time Complexity : O(log(pos))
+     */
     //unbounded binary search
     public static int optimizeSolution(int[] arr, int target) {
         if (arr[0] == target) return 0;
