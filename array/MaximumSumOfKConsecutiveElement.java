@@ -8,7 +8,9 @@ public class MaximumSumOfKConsecutiveElement {
         int n = input.length;
         int k = 3;
         int sum = maximumConsecutiveSum(input, n, k);
+        int maximum = maximumConsecutive(input, n, k);
         System.out.println(sum);
+        System.out.println(maximum);
     }
 
     public static int maximumConsecutiveSum(int[] arr, int n, int k) {
@@ -24,6 +26,21 @@ public class MaximumSumOfKConsecutiveElement {
             sum -= arr[point];
             point++;
             sum += arr[i];
+            maxSum = Math.max(maxSum, sum);
+        }
+        return maxSum;
+    }
+
+    public static int maximumConsecutive(int[] arr, int n, int k) {
+        int sum = 0;
+
+        for (int i = 0; i < k; i++) {
+            sum += arr[i];
+        }
+        int maxSum = sum;
+
+        for (int i = k; i < n; i++) {
+            sum = sum + arr[i] - arr[i - k];
             maxSum = Math.max(maxSum, sum);
         }
         return maxSum;
