@@ -11,11 +11,10 @@ public class SampleLinkedListImpl {
         head.next = n1;
         n1.next = n2;
 
-        Node temp = head;
-
-        while (temp != null) {
-            System.out.print(temp.data + "  ");
-            temp = temp.next;
-        }
+        PrintList.print(head);
+        System.out.println();
+        RecursiveTraversal.print(head);
+        System.out.println();
+        RecursiveTraversal.print(head);
     }
 }
