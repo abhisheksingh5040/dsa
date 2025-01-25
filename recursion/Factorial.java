@@ -8,6 +8,7 @@ public class Factorial {
         System.out.println(fact);
     }
 
+    //Tail recursion
     public static int fact(int n, int k) {
         if (n == 0 || n == 1) {
             return k;

@@ -49,7 +49,7 @@ public class LongestSubArrayWithGivenSum {
             prefixSum += arr[i];
             if (prefixSum == sum) result = i + 1;
 
-            //if prefix sum is already resent we are not going to replace it
+            //if prefix sum is already present we are not going to replace it
             if (!map.containsKey(prefixSum)) map.put(prefixSum, i);
             if (map.containsKey(prefixSum - sum)) {
                 Integer index = map.get(prefixSum - sum);
