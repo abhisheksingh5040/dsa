@@ -25,6 +25,7 @@ public class CircularLL {
         head = deleteHeadNaive(head);
         head = deleteHeadEfficient(head);
         head = deleteHeadEfficient(head);
+        head = deleteKthNode(head, 2);
         System.out.println();
         print(head);
     }
@@ -104,6 +105,9 @@ public class CircularLL {
         return head;
     }
 
+    /*
+     * Time Complexity : Theta(1)
+     */
     public static Node insertLastEffective(Node head, int data) {
         Node temp = new Node(data);
         if (head == null) {
@@ -121,6 +125,9 @@ public class CircularLL {
         return temp;
     }
 
+    /*
+     * Time Complexity : Theta(N)
+     */
     public static Node deleteHeadNaive(Node head) {
         if (head == null || head.next == null) return null;
 
@@ -133,6 +140,9 @@ public class CircularLL {
         return curr.next;
     }
 
+    /*
+     * Time Complexity : Theta(1)
+     */
     public static Node deleteHeadEfficient(Node head) {
         if (head == null || head.next == null) return null;
         //swap
@@ -140,6 +150,23 @@ public class CircularLL {
 
         //delete 2nd node
         head.next = head.next.next;
+        return head;
+    }
+
+    /*
+     * Time complexity : Theta(K)
+     */
+    public static Node deleteKthNode(Node head, int k) {
+        if (head == null) return head;
+        if (k == 1) return deleteHeadEfficient(head);
+
+        Node curr = head;
+
+        for (int i = 0; i < k - 2; i++) {
+            curr = curr.next;
+        }
+
+        curr.next = curr.next.next;
         return head;
     }
 }
