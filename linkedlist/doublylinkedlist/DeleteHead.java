@@ -37,6 +37,9 @@ public class DeleteHead {
         }
     }
 
+    /**
+     * Time complexity : Theta(N)
+     */
     public static Node deleteLastNode(Node head) {
         if (head == null || head.next == null) {
             return null;
