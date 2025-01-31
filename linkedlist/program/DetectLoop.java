@@ -16,8 +16,10 @@ public class DetectLoop {
         n3.next = n2;
         boolean result = naiveSolution(head);
         boolean method2 = method2(head);
+        boolean floydAlgo = floydAlgo(head);
         System.out.println(result);
         System.out.println(method2);
+        System.out.println(floydAlgo);
     }
 
     /*
@@ -54,6 +56,17 @@ public class DetectLoop {
                 set.add(head);
                 head = head.next;
             }
+        }
+        return false;
+    }
+
+    public static boolean floydAlgo(Node head) {
+        Node slow = head, fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
         }
         return false;
     }
