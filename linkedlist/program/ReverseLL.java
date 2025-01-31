@@ -10,7 +10,8 @@ public class ReverseLL {
         head = InsertSLL.insert(head, 15);
 
         Print.printSinglyLL(head);
-        head = reverseLL(head);
+        //head = reverseLL(head);
+        head = reverseLLMethod1(head, null);
         System.out.println();
         Print.printSinglyLL(head);
     }
@@ -32,5 +33,13 @@ public class ReverseLL {
             curr = next;
         }
         return prev;
+    }
+
+    public static Node reverseLLMethod1(Node curr, Node prev) {
+        if (curr == null) return prev;
+
+        Node next = curr.next;
+        curr.next = prev;
+        return reverseLLMethod1(next, curr);
     }
 }
