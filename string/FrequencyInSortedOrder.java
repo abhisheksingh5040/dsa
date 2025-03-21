@@ -1,3 +1,5 @@
+package string;
+
 public class FrequencyInSortedOrder {
     public static void main(String[] args) {
         String input = "geeksforgeeks";
