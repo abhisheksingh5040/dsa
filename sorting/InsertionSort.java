@@ -17,7 +17,7 @@ public class InsertionSort {
         for (int i = 0; i < n; i++) {
             int minVal = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[minVal] < arr[j]) {
+                if (arr[minVal] < arr[j] && arr[j] > 0) {
                     minVal = j;
                 }
             }
