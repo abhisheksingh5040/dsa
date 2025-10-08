@@ -19,6 +19,6 @@ public class StringIsASubsequence {
             }
         }
 
-        return j == s2.length() ? true : false;
+        return j == s2.length();
     }
 }

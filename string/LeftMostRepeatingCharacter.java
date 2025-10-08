@@ -1,5 +1,7 @@
 package string;
 
+import java.util.Arrays;
+
 public class LeftMostRepeatingCharacter {
     public static void main(String[] args) {
         String input = "abccbd";
@@ -7,8 +9,12 @@ public class LeftMostRepeatingCharacter {
         int naiveMethod = naiveMethod(input, n);
         System.out.println(naiveMethod);
 
-        int optimizeMethod = optimizeMethod(input, n);
-        System.out.println(optimizeMethod);
+        int optimizeMethod1 = optimizeMethod1(input, n);
+        int optimizeMethod2 = optimizeMethod2(input, n);
+        int optimizeMethod3 = optimizeMethod3(input, n);
+        System.out.println(optimizeMethod1);
+        System.out.println(optimizeMethod2);
+        System.out.println(optimizeMethod3);
     }
 
     /**
@@ -28,7 +34,7 @@ public class LeftMostRepeatingCharacter {
     /**
      * Time complexity : O(2N)
      */
-    public static int optimizeMethod(String str, int n) {
+    public static int optimizeMethod1(String str, int n) {
         final int CHAR = 256;
         int[] chars = new int[CHAR];
 
@@ -37,10 +43,47 @@ public class LeftMostRepeatingCharacter {
         }
 
         for (int i = 0; i < n; i++) {
-            if(chars[str.charAt(i)] > 1){
+            if (chars[str.charAt(i)] > 1) {
                 return i;
             }
         }
         return -1;
+    }
+
+    /**
+     * Time complexity : O(N)
+     */
+    public static int optimizeMethod2(String str, int n) {
+        final int CHAR = 256;
+        int[] fIndex = new int[CHAR];
+        Arrays.fill(fIndex, -1);
+        int res = Integer.MAX_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int fi = fIndex[str.charAt(i)];
+            if (fi == -1) {
+                fIndex[str.charAt(i)] = i;
+            } else {
+                res = Math.min(fi, res);
+            }
+        }
+        return res == Integer.MIN_VALUE ? -1 : res;
+    }
+
+    /**
+     * Time complexity : O(N)
+     */
+    public static int optimizeMethod3(String str, int n) {
+        final int CHAR = 256;
+        boolean[] visited = new boolean[CHAR];
+        int res = -1;
+        for (int i = n - 1; i >= 0; i--) {
+            if (visited[str.charAt(i)]) {
+                res = i;
+            } else {
+                visited[str.charAt(i)] = true;
+            }
+        }
+        return res;
     }
 }
