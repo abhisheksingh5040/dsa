@@ -9,7 +9,7 @@ public class MoveZeroToEnd {
         int n = input.length;
 
         naiveSolution(input, n);
-        optimizeSolution(input, n);
+        optimizeSolution1(input, n);
         System.out.println(Arrays.toString(input));
     }
 
@@ -34,6 +34,21 @@ public class MoveZeroToEnd {
                 arr[i] = arr[count];
                 arr[count] = temp;
                 count++;
+            }
+        }
+    }
+
+    public static void optimizeSolution1(int[] arr, int n) {
+        int end = n - 1, start = 0;
+
+        while (start <= end) {
+            if (arr[start] == 0) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                end--;
+            }else{
+                start++;
             }
         }
     }
