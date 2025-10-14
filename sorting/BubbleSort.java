@@ -2,6 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
+//Stable sorting algorithm
 public class BubbleSort {
     public static void main(String[] args) {
 //        int[] arr = {3, 2, 5, 8, 7, 6, 1};
