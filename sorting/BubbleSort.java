@@ -2,12 +2,12 @@ package sorting;
 
 import java.util.Arrays;
 
-public class BinarySort {
+public class BubbleSort {
     public static void main(String[] args) {
 //        int[] arr = {3, 2, 5, 8, 7, 6, 1};
         int[] arr = {3, 2, 5, 8};
         int n = arr.length;
-        binarySort(arr,n);
+        bubbleSort(arr,n);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -15,7 +15,7 @@ public class BinarySort {
      * Time complexity : Theta(N ^ 2)
      *
      */
-    public static void binarySort(int[] arr, int n) {
+    public static void bubbleSort(int[] arr, int n) {
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if(arr[j] < arr[j + 1]){
@@ -29,7 +29,7 @@ public class BinarySort {
      * Time complexity : O(N ^ 2)
      *
      */
-    public static void binarySortOptimize(int[] arr, int n) {
+    public static void bubbleSortOptimize(int[] arr, int n) {
         for (int i = 0; i < n - 1; i++) {
             boolean flag = false;
             for (int j = 0; j < n - i - 1; j++) {
