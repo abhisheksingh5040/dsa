@@ -23,6 +23,5 @@ public class InsertAtGivenPosition {
             }
         }
         return head;
-
     }
 }
